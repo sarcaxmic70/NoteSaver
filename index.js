@@ -6,13 +6,17 @@ let notes=document.querySelectorAll(".input_box");
 })();
 add_button.addEventListener("click",()=>{
     let input_box=document.createElement("p");
+    // let date_time=document.createElement("p");
     let img=document.createElement("img");
+    // date_time.classList.add("date");
     input_box.classList.add("input_box");
     input_box.setAttribute("contenteditable","true");
     img.src="./images/delete.png";
     // span.innerHTML=Date();
     notes_container.appendChild(input_box).appendChild(img);
-    // input_box.appendChild(date);
+    // input_box.appendChild(date_time);
+    // const date_data=new Date();
+    // date_time.innerHTML=data.getHours()+":"+data.getMinutes();
     // span.insertAdjacentElement(span);
 });
 notes_container.addEventListener("click",(e)=>{
@@ -24,12 +28,7 @@ notes_container.addEventListener("click",(e)=>{
         notes=document.querySelectorAll(".input_box");
         notes.forEach(nt => {
             nt.onkeyup=function(){
-                // let date=document.createElement("p");
-                // date.classList.add("date");
-                // date.setAttribute("contenteditable","true");
-                // e.target.appendChild(date);
-                // const datee=new Date();
-                // date.innerText=`${datee.getDate()}-${datee.getMonth()+1}-${datee.getFullYear()}`;
+                // nt.querySelector(".date").innerHTML=daTe();
                 updateStorage();
             }
         })
@@ -50,5 +49,19 @@ function onLoad(){
 }
 // onLoad();
 // localStorage.clear();
+let clear_button=document.querySelector("#clearAll");
+clear_button.addEventListener("click",(e)=>{
+    notes=document.querySelectorAll(".input_box");
+    notes.forEach(nt=>{
+        nt.remove();
+        updateStorage();
+    })
+})
+
+// function daTe(){
+//     let data=new Date();
+//     return(data.getHours()+":"+data.getMinutes());
+// }
+// daTe();
 
 window.onLoad(onLoad());

@@ -4,10 +4,13 @@
     font-family: 'Poppins',sans-serif;
     box-sizing: border-box;
 }
+body{
+    background: linear-gradient(135deg,#cf9aff,#95c0ff);    
+}
 .container{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg,#cf9aff,#95c0ff);
+    
     padding-top: 4%;
     padding-left: 10%;
     padding-right: 5%;
@@ -81,4 +84,7 @@
     right: 5px;
     bottom: 10px;
     cursor: pointer;
+}
+#clearAll{
+    margin-bottom: 0px;
 }

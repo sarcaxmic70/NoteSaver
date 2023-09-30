@@ -90,5 +90,10 @@ body{
     color: grey;
 }
 #clearAll{
-    margin-bottom: 0px;
+    margin-bottom: 10px;
+}
+@media screen and (max-width:500px){
+    .container .right_panel img{
+        display: none;
+    }
 }

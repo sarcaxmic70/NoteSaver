@@ -22,14 +22,16 @@ add_button.addEventListener("click",()=>{
     // span.insertAdjacentElement(span);
 });
 notes_container.addEventListener("click",(e)=>{
-    if(e.target.tagName=="IMG"){
+    if(e.target.tagName==="IMG"){
         e.target.parentElement.remove();
         updateStorage();
         }
     else if(e.target.tagName==="P"){
         notes=document.querySelectorAll(".input_box");
         e.target.classList.remove("before_click");
+        if(e.target.innerHTML==`Click her to start typing....///...Notes will be saved automatically.<img src="./images/delete.png">`){
         e.target.innerHTML=`<img src="./images/delete.png">`;
+        }
         notes.forEach(nt => {
             nt.onkeyup=function(){
                 // nt.querySelector(".date").innerHTML=daTe();
@@ -72,5 +74,10 @@ clear_button.addEventListener("click",(e)=>{
 //     return(data.getHours()+":"+data.getMinutes());
 // }
 // daTe();
-
+    // (function(){
+    //     let logo=document.querySelector(".logo");
+    //     if(window.screen.width<=480){
+    //         logo.remove();
+    //     }
+    // })();
 window.onLoad(onLoad());
